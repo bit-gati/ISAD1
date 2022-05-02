@@ -41,17 +41,17 @@ if __name__ == "__main__":
     while not done and charIndex < solutionLength:
         
         direction = solution[charIndex]
-        print("Location: (" + str(currentRow) + ", " + str(currentCol) 
+        print("Location: (" + str(Row) + ", " + str(currentCol) 
             + "), next direction: '" + direction + "'")
         
         if direction == NORTH:
-            currentRow -= 1
+            Row -= 1
             
         elif direction == EAST:
             currentCol += 1
                 
         elif direction == SOUTH:
-            currentRow += 1
+            Row += 1
                 
         elif direction == WEST:
             currentCol -= 1
@@ -59,21 +59,21 @@ if __name__ == "__main__":
         else:
             print("WRONG") # Invalid direction.
         
-        if (currentRow < 0 or currentCol < 0 
-                        or currentRow >= len(grid) 
-                        or currentCol >= len(grid[currentRow])):
+        if (Row < 0 or currentCol < 0 
+                        or Row >= len(grid) 
+                        or currentCol >= len(grid[Row])):
             done = True
             print("YOU FELL") # Out of bounds.
             
         else:
-            if grid[currentRow][currentCol] == EMPTY:
-                grid[currentRow][currentCol] = VISITED
+            if grid[Row][currentCol] == EMPTY:
+                grid[Row][currentCol] = VISITED
                 
-            elif grid[currentRow][currentCol] == WALL:
+            elif grid[Row][currentCol] == WALL:
                 done = True
                 print("HIT THE WALL") # Hit wall.
 
-            elif grid[currentRow][currentCol] == END:
+            elif grid[Row][currentCol] == END:
                 done = True
                 solved = True
                 print("YOU LEFT!") # Solved.
