@@ -66,6 +66,7 @@ if __name__ == "__main__":
             print("YOU FELL") # Out of bounds.
             
         else:
+
             if grid[Row][currentCol] == EMPTY:
                 grid[Row][currentCol] = VISITED
                 
@@ -77,6 +78,7 @@ if __name__ == "__main__":
                 done = True
                 solved = True
                 print("YOU LEFT!") # Solved.
+
                 
             else:
                 pass # Do nothing
